@@ -22,6 +22,7 @@
     align-items: center;
     justify-content: center;
 padding-left: auto;
+background-color: #ffffff;
 
   }
   
@@ -83,7 +84,7 @@ padding-left: auto;
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
-    color: #141a39;
+    color: hsl(150, 5%, 8%);
     cursor: default;
   }
   
@@ -148,7 +149,7 @@ padding-left: auto;
     width: 42rem;
     height: 5.5rem;
     top: -0.5rem;
-    background-color: #5c5be5;
+    background-color: hsl(150, 43%, 44%);
     position: absolute;
     left: -1rem;
     -webkit-box-shadow: 0px 15px 11px -6px #7a7a7d;
@@ -162,7 +163,7 @@ padding-left: auto;
     bottom: -0.8rem;
     left: 0.35rem;
     transform: rotate(45deg);
-    background-color: #5c5be5;
+    background-color: hsl(150, 43%, 44%);
     position: absolute;
     z-index: -1;
   }
@@ -174,7 +175,7 @@ padding-left: auto;
     bottom: -0.8rem;
     right: 0.35rem;
     transform: rotate(45deg);
-    background-color: #5c5be5;
+    background-color: hsl(150, 43%, 44%);
     position: absolute;
     z-index: -1;
   }
@@ -202,7 +203,7 @@ padding-left: auto;
   }
   
   .exit:hover {
-    border: 0.1rem solid #5c5be5;
+    border: 0.1rem solid hsl(150, 43%, 44%);
   }
   
   .continue {
@@ -212,9 +213,9 @@ padding-left: auto;
     font-size: 1.3rem;
     color: #fff;
     text-transform: uppercase;
-    background-color: #5c5be5;
+    background-color: hsl(150, 43%, 44%);
     border: 0;
-    border-bottom: 0.2rem solid #3838b8;
+    border-bottom: 0.2rem solid hsl(150, 43%, 44%);
     border-radius: 2rem;
     cursor: pointer;
   }

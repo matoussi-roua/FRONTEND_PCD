@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../models/product';
+import { Product } from '../models/product/product';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class ShoppinglistService {
   }
 
   removeFromShoppingList(product: Product) {
-    const index = this.shoppingList.findIndex(item => item.postId === product.postId);
+    const index = this.shoppingList.findIndex(item => item.idProduct === product.idProduct);
     if (index !== -1) {
       this.shoppingList.splice(index, 1);
     }

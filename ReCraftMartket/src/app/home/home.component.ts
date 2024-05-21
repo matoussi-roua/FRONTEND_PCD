@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
-import { Product } from '../models/product';
 import { ShoppinglistService } from '../services/shoppinglist.service';
+import { Product } from '../models/product/product';
+import { HttpClient } from '@angular/common/http';
+import { FileProductService } from '../services/files/file-product.service';
+import { ProductService } from '../services/product/product.service';
+import { DataService } from '../recsys/data.service';
 
 @Component({
   selector: 'app-home',
@@ -9,36 +13,31 @@ import { ShoppinglistService } from '../services/shoppinglist.service';
 })
 export class HomeComponent {
 
-  constructor(private shoppingService: ShoppinglistService) {}
+  productsList: Product[] = [];
+  data:any;
+  constructor(private httpclient: HttpClient,private productService:ProductService,private dataService :DataService) {}
 
-  product: Product | undefined;
-
-  icons = [
-    { id: 'heartIcon1' },
-    { id: 'heartIcon2' },
- { id: 'heartIcon3' },
-  { id: 'heartIcon4' },
-   { id: 'heartIcon5' },
-   { id: 'heartIcon6' },
-   { id: 'heartIcon7' },
-  ];
-
-  toggleHeartColor(iconId: string) {
-    const heartIcon = document.getElementById(iconId);
-    if (heartIcon) {
-      heartIcon.classList.toggle('red-heart');
-    }
+  ngOnInit() {
+this.dataService.fetchDataFromFlaskApi().subscribe((r:any)=>{
+console.log(r);
+});
+    this.productService.getAllProducts().subscribe((r)=>{
+      console.log(r);
+      this.productsList=r;
+    })
+    //this.fetchProducts();
+    console.log();
   }
 
-toggleStarColor(iconId: string) {
-  const starIcon = document.getElementById(iconId);
-  if (starIcon) {
-    starIcon.classList.toggle('star-clicked');
-  }
-}
-
-
-  onAddToShoppingList(product: Product) {
-    this.shoppingService.addToShoppingList(product);
-  }
+  // fetchProducts() {
+  //   this.httpclient.get<Product[]>("https://fakestoreapi.com/products").subscribe(
+  //     (data: Product[]) => {
+  //       console.log(data);
+  //       this.productsList = data;
+  //     },
+  //     (error) => {
+  //       console.error("Error fetching products:", error);
+  //     }
+  //   );
+  // }
 }

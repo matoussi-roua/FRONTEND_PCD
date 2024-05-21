@@ -5,43 +5,49 @@
       <div class="signup nodisplay">
         <h1>register</h1>
 
-      <form [formGroup]="SignupForm" (ngSubmit)="SignupUser()"autocomplete="off">
-            <input type="text" placeholder="username" formControlName="signupusername">
-            <span style="color:red;"*ngIf="signupusername && signupusername.invalid && signupusername.touched">User input field is not valid</span>
-
-            <input type="text" placeholder="adress"formControlName="adress">
-            <span style="color:red;"*ngIf="signupadress && signupadress.invalid && signupadress.touched">adress input field is not valid</span>
-
-            <input type="text" placeholder="phone number" formControlName="phonenumber">
-            <span style="color:red;"*ngIf="signupphonenumber && signupphonenumber.invalid && signupphonenumber.touched">Phone number input field is not valid</span>
-
-
-            <input type="password" placeholder="password" formControlName="signuppassword">
-            <span style="color:red;"*ngIf="signuppassword && signuppassword.invalid && signuppassword.touched">Password input field is not valid</span>
-
-            <input type="password" placeholder="confirm password" formControlName="confirmpassword">
-            <span style="color:red;"*ngIf="signupconf_password && signupconf_password.invalid && signupconf_password.touched">confirmPassword input field is not valid</span>
-
-
-          <button   [disabled]="SignupForm.invalid"class="button submit" >create account </button>
+        <form [formGroup]="SignupForm" (ngSubmit)="SignupUser()"  autocomplete="off">
+          <input type="text" placeholder="firstname" formControlName="signupfirstname">
+          <span style="color:red;" *ngIf="SignupForm.get('signupfirstname')?.invalid && SignupForm.get('signupfirstname')?.touched">User input field is not valid</span>
+        
+          <input type="text" placeholder="lastname" formControlName="signuplastname">
+          <span style="color:red;" *ngIf="SignupForm.get('signuplastname')?.invalid && SignupForm.get('signuplastname')?.touched">User input field is not valid</span>
+        
+          <input type="text" placeholder="email" formControlName="signupemail">
+          <span style="color:red;" *ngIf="SignupForm.get('signupemail')?.invalid && SignupForm.get('signupemail')?.touched">User input field is not valid</span>
+        
+          <input type="text" placeholder="city" formControlName="address">
+          <span style="color:red;" *ngIf="SignupForm.get('address')?.invalid && SignupForm.get('address')?.touched">Address input field is not valid</span>
+        
+          <input type="text" placeholder="phone number" formControlName="phonenumber">
+          <span style="color:red;" *ngIf="SignupForm.get('phonenumber')?.invalid && SignupForm.get('phonenumber')?.touched">Phone number input field is not valid</span>
+        
+          <input type="password" placeholder="password" formControlName="signuppassword">
+          <span style="color:red;" *ngIf="SignupForm.get('signuppassword')?.invalid && SignupForm.get('signuppassword')?.touched">Password input field is not valid</span>
+        
+          <input type="password" placeholder="confirm password" formControlName="confirmpassword">
+          <span style="color:red;" *ngIf="SignupForm.get('confirmpassword')?.invalid && SignupForm.get('confirmpassword')?.touched">Confirm password input field is not valid</span>
+        
+          <button [disabled]="SignupForm.invalid" class="button submit">Create Account</button>
         </form>
+        
       </div>
       <div class="signin">
         <h1>sign in</h1>
-        <form [formGroup]="loginForm" (ngSubmit)="loginUser()"class="more-padding" autocomplete="off">
-
-            <input type="text" placeholder="username" formControlName="loginusername">
-            <span style="color:red;"*ngIf="loginusername && loginusername.invalid && loginusername.touched">User input field is not valid</span>
-
-            <input type="password" placeholder="password" formControlName="loginpassword">
-            <span style="color:red;"*ngIf="loginpassword && loginpassword.invalid && loginpassword.touched">Password input field is not valid</span>
-
+        <form [formGroup]="LoginForm" (ngSubmit)="LoginUser()" class="more-padding" autocomplete="off">
+          <input type="text" placeholder="email" formControlName="loginusername">
+          <span style="color:red;" *ngIf="LoginForm.get('loginusername')?.invalid && LoginForm.get('loginusername')?.touched">User input field is not valid</span>
+        
+          <input type="password" placeholder="password" formControlName="loginpassword">
+          <span style="color:red;" *ngIf="LoginForm.get('loginpassword')?.invalid && LoginForm.get('loginpassword')?.touched">Password input field is not valid</span>
+        
           <div class="checkbox">
-            <input type="checkbox" id="remember" /><label for="remember">remember me</label>
+            <input type="checkbox" id="remember" />
+            <label for="remember">remember me</label>
           </div>
-
-          <button [disabled]="loginForm.invalid" class="button submit">LogIn</button>
+        
+          <button [disabled]="LoginForm.invalid" class="button submit">Log In</button>
         </form>
+        
 
       </div>
     </div>

@@ -2,7 +2,7 @@ import { environment } from './../../environments/environment.development';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Product } from '../models/product';
+import { Product } from '../models/product/product';
 
 
 @Injectable({
@@ -19,9 +19,9 @@ export class ProductService {
     return this.http.get<Product>(environment.hostbackend + "/getproductbyid/" + id);
   }
   //updatejuste description?
-    updateproduct(produit: Product): Observable<Product> {
-    return this.http.put<Product>(environment.hostbackend + "/updateproduct/" + produit.postId, produit)
-  }
+  //   updateproduct(produit: Product): Observable<Product> {
+  //   return this.http.put<Product>(environment.hostbackend + "/updateproduct/" + produit.postId, produit)
+  // }
     addproduct(produit: Product): Observable<Product> {
     return this.http.post<Product>(environment.hostbackend + "/addproduct", produit);
   }

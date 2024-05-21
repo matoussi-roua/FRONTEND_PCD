@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { UserEntity } from '../models/user_entity';
 import { Observable } from 'rxjs';
+import { UserEntity } from '../models/user/user_entity';
 
 
 
@@ -31,9 +31,12 @@ getUserById(id: string): Observable<UserEntity> {
   addUser(user: UserEntity): Observable<UserEntity> {
     return this.httpclient.post<UserEntity>(this.apiUrl, user);
   }
+// 
 
     updateUser(user: UserEntity): Observable<any> {
     return this.httpclient.put(`${this.apiUrl}/${user.id}`, user);
-  }}
+  }
+}
+
 
 

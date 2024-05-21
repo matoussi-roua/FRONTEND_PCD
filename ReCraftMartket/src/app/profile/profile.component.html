@@ -6,10 +6,8 @@
       <div class="profile-header-cover"></div>
       <div class="profile-header-content">
         <div class="profile-header-img">
-          <img
-            src="https://bootdey.com/img/Content/avatar/avatar8.png"
-            alt=""
-          />
+          <img *ngIf="existedimage" [src]="imageData"/>
+          <img *ngIf="!existedimage" src="assets/images/avatar.jpg" alt="">
         </div>
 
         <ul class="profile-header-tab nav nav-tabs nav-tabs-v2">
@@ -96,19 +94,19 @@
     <div class="profile-container">
       <div class="profile-sidebar">
         <div class="desktop-sticky-top">
-          <h4>John Smith</h4>
+          <h4> {{currentUser.lastname}}  {{currentUser.firstname}}</h4>
           <div class="font-weight-600 mb-3 text-muted mt-n2"></div>
           <div>
             <p class="text-muted mb-2 fw-medium">
               <i class="mdi mdi-email-outline me-2"></i
-              >slimeneya79&#64;gmail.com
+              >{{currentUser.username}}
             </p>
             <p class="text-muted fw-medium mb-0">
-              <i class="mdi mdi-phone-in-talk-outline me-2"></i>+216 21 471 xxx
+              <i class="mdi mdi-phone-in-talk-outline me-2"></i>
             </p>
           </div>
           <div class="mb-1">
-            <i class="fa fa-map-marker-alt fa-fw text-muted"></i> Manouba
+            <i class="fa fa-map-marker-alt fa-fw text-muted"></i> {{currentUser.address}}
           </div>
 
           <button class="btn" type="button" routerLink="/update">

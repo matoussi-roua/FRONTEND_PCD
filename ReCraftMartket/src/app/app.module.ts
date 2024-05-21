@@ -32,6 +32,12 @@ import { HomeComponent } from './home/home.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthService } from './services/auth/auth-service.service';
+import { AuthInterceptor } from './interceptors/auth-interceptor';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 /*login */
 @NgModule({
   declarations: [
@@ -54,7 +60,10 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     Navbar2Component,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    SigninComponent,
+    SignupComponent,
+    ShoppingListComponent
    // ModelsComponent
   ],
   imports: [
@@ -66,12 +75,25 @@ import { FooterComponent } from './footer/footer.component';
      MatInputModule,
      ReactiveFormsModule,
       MatDialogModule,
-     MatIconModule
+     MatIconModule,
+     HttpClientModule,
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+    AuthService,
     provideClientHydration(),
     provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+/*Import HttpClientModule in AppModule.
+Provide _AuthService in either AppModule or a specific component/module.
+Make sure _AuthService properly imports HttpClient.*/

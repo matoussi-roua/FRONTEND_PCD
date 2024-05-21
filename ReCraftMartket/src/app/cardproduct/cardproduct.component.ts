@@ -1,8 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
+import { Product } from '../models/product/product';
 @Component({
   selector: 'app-cardproduct',
   templateUrl: './cardproduct.component.html',

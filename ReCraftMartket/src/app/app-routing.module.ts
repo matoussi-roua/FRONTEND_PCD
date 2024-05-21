@@ -20,10 +20,13 @@ import { UpdateComponent } from './update_user/updateuser.component';
 import { HomeComponent } from './home/home.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
 import { FooterComponent } from './footer/footer.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 
 const routes: Routes = [
- //   {path:"", redirectTo:"/navbar",pathMatch :'full'},
+    //{path:"", redirectTo:"/home",pathMatch :'full'},
 
   //{path:"", redirectTo:"/cardproduct",pathMatch :'full'},
 {path:"navbar2",component:Navbar2Component},
@@ -34,7 +37,7 @@ const routes: Routes = [
   {path:"profile",component:ProfileComponent},
   {path:"dashboard",component:DashboardComponent},
   {path:"chat",component:ChatComponent},
-  {path:"cardproduct",component:CardproductComponent},
+  {path:"",component:CardproductComponent},
    {path:"leaderboard",component:LeaderboardComponent},
    {path:"topcustomer",component:TopcustomerComponent},
    {path:"details",component:DetailsComponent},
@@ -42,8 +45,11 @@ const routes: Routes = [
    {path:"log",component:LogComponent},
     {path:"update",component:UpdateComponent},
     {path:"home",component:HomeComponent},
-   {path:"addproduct",component:AddproductComponent}
-  // {path:"**",component:NotfoundComponent}
+   {path:"addproduct",component:AddproductComponent},
+   {path:"signin",component:SigninComponent},
+   {path:"signup",component:SignupComponent},
+   {path:"shoppinglist",component:ShoppingListComponent}
+   // {path:"**",component:NotfoundComponent}
 ];
 
 @NgModule({
