@@ -1,0 +1,89 @@
+<app-navbar></app-navbar>
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+
+  
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row gx-lg-5 align-items-center mb-5">
+        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+            <img class="logo"src="assets/images/logoRecraftmarketblanc.png" alt="">
+            <span style="color: hsl(0, 8%, 81%)">for your business</span>
+          
+          <p class="mb-4 opacity-70" style="color: hsl(0, 0%, 100%)">
+            Welcome to ReCraftMarket, your destination for all things DIY and upcycled!
+             Dive into a world of creativity and sustainability as you browse through a 
+             curated collection of unique and eco-friendly products. From handmade crafts 
+             to upcycled treasures, each item tells a story of creativity and conscious 
+             living. Join us in our mission to promote sustainable practices and support 
+             artisans dedicated to making a difference. Let's reimagine shopping together 
+             on ReCraftMarket!
+          </p>
+          <div>
+            <a style="color:white ;" routerLink="/signup">
+              <i class="fa fa-solid fa-arrow-left" style="color: #ffffff;"></i>
+            Return
+          </a>
+          </div>
+
+        </div>
+        
+  
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+          <div class="card bg-glass container">
+            
+            <div class="card-body px-4 py-5 px-md-4">
+              
+              <form [formGroup]="LoginForm" >
+                <!-- <div data-mdb-input-init class=" form-outline mb-4"><img class=" container logo" src="assets/images/logoRecraftmarket.png" alt=""></div> -->
+                
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <!-- <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="form3Example1" class="form-control" />
+                      <label class="form-label" for="form3Example1">First name</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="form3Example2" class="form-control" />
+                      <label class="form-label" for="form3Example2">Last name</label>
+                    </div>
+                  </div>
+                </div> -->
+  
+                <!-- Email input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="email" placeholder="email" class="form-control"formControlName="loginusername">
+                  <span style="color:red;" *ngIf="LoginForm.get('loginusername')?.invalid && LoginForm.get('loginusername')?.touched">User input field is not valid</span>
+ 
+                </div>
+  
+                <!-- Password input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="password" placeholder="password" class="form-control" formControlName="loginpassword">
+                  <span style="color:red;" *ngIf="LoginForm.get('loginpassword')?.invalid && LoginForm.get('loginpassword')?.touched">Password input field is not valid</span>
+                  
+                </div>
+  
+                
+  
+                <!-- Submit button  -->
+                <button type="submit" (click)="signIn()" data-mdb-button-init data-mdb-ripple-init class=" btn btn-primary btn-block container mb-4">
+                  Sign in
+                </button>
+                <div style="text-align: center;">
+                  <span style="color:red;"[(ngModel)]="errorsfromback">{{errorsfromback}}</span></div>
+                
+                <div style="text-align: center;">
+                  <a routerLink="/signup" class="container" style="color: #0d6836;">Sign up</a>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->

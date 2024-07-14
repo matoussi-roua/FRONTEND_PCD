@@ -1,0 +1,21 @@
+.icon-hover-primary:hover {
+    border-color: #dc4c64 !important;
+    background-color: white !important;
+  }
+  
+  .icon-hover-primary:hover i {
+    color: #dc4c64 !important;
+  }
+  .icon-hover-danger:hover {
+    border-color: #dc4c64 !important;
+    background-color: white !important;
+  }
+  
+  .icon-hover-danger:hover i {
+    color: #dc4c64 !important;
+  }
+  .ba
+  {
+  margin-top:126px;}
+  
+  

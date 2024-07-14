@@ -26,7 +26,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 
 const routes: Routes = [
-    //{path:"", redirectTo:"/home",pathMatch :'full'},
+    {path:"", redirectTo:"/home",pathMatch :'full'},
 
   //{path:"", redirectTo:"/cardproduct",pathMatch :'full'},
 {path:"navbar2",component:Navbar2Component},
